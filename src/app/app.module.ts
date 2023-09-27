@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AproposComponent } from './pages/apropos/apropos.component';
@@ -10,6 +9,12 @@ import { HeaderComponent } from './pages/header/header.component';
 import { PharmaciesComponent } from './pages/pharmacies/pharmacies.component';
 import {SharedCommonsModule} from "./pages/shared-commons/shared-commons.module";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {MapComponent} from './map/map.component';
+import {HttpClientModule} from "@angular/common/http";
+import {NgMapsCoreModule} from "@ng-maps/core";
+import { NgMapsGoogleModule} from "@ng-maps/google";
+import {environment} from "./environments/environment";
+
 
 @NgModule({
   declarations: [
@@ -18,15 +23,23 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     CardComponent,
     FooterComponent,
     HeaderComponent,
-    PharmaciesComponent
+    PharmaciesComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    SharedCommonsModule
+    SharedCommonsModule,
+    HttpClientModule,
+    NgMapsCoreModule,
+    NgMapsGoogleModule.forRoot({
+      apiKey: environment.apiKey,
+      libraries: ['places']
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

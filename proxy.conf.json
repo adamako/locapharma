@@ -1,0 +1,7 @@
+{
+  "/maps/*": {
+    "target": "https://maps.googleapis.com",
+    "secure": true,
+    "changeOrigin": true
+  }
+}
