@@ -8,6 +8,9 @@ import { PersonnalCardComponent } from './personnal-card/personnal-card.componen
   declarations: [
     PersonnalCardComponent
   ],
+  exports: [
+    PersonnalCardComponent
+  ],
   imports: [
     CommonModule
   ]
