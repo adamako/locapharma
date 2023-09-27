@@ -33,9 +33,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/leaflet/dist/leaflet.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -66,12 +69,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "locapharma:build:production"
+              "browserTarget": "locapharma:build:production",
             },
             "development": {
-              "browserTarget": "locapharma:build:development"
+              "browserTarget": "locapharma:build:development",
             }
           },
           "defaultConfiguration": "development"
