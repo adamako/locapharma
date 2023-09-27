@@ -1,4 +1,8 @@
-<div>
-  <app-map></app-map>
-  <router-outlet></router-outlet>
+<div class="container">
+  <app-header></app-header>
+  <div class="container card mt-3 mb-3" style="min-height:95vh">
+    <router-outlet></router-outlet>
+      <app-map></app-map>
+  </div>
+  <app-footer></app-footer>
 </div>
