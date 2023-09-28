@@ -1,23 +1,30 @@
-<nav class="navbar navbar-expand-lg ">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="" alt="Logo Pharmacy" class="d-inline-block align-text-top">
+<nav class="bg-white fixed w-full top-0 left-0">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="#" class="flex items-center">
+      <img src="./assets/logo.png" class="h-10 mr-3" alt="locapharma">
+      <span class="self-center text-base text-xl">Loca Pharmacie</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page"  routerLink="pharmacies" routerLinkActive="active">Pharmacies</a>
+    <div class="flex md:order-2">
+      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="#" routerLink="pharmacies" routerLinkActive="active" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Pharmacies</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="card" routerLinkActive="active">Carte</a>
+        <li>
+          <a href="#" routerLink="map" routerLinkActive="active" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Carte</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="apropos" routerLinkActive="active">A propos</a>
+        <li>
+          <a href="#" routerLink="apropos" routerLinkActive="active" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">A propos</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+

@@ -1,15 +1,15 @@
-<div class="container p-2">
-  <h5 class="text-center">A propos du projet</h5>
-  <p class="text-justify p-3" style="background-color: #E9ECEF">Ambitioni dedisse scripsisse iudicaretur.
-    Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae,
-    eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi.
-    At nos hinc posthac, sitientis piros Afros.
-    Petierunt uti sibi concilium totius Galliae in diem certam indicere.
-    Cras mattis iudicium purus sit amet fermentum.</p>
+<div class="container p-5 rounded">
+  <h5 class="text-center mt-3 mb-3 font-semibold text-base">A propos du projet</h5>
+  <p class="text-justify bg-back rounded p-3">
+    Loca Pharmacie est une application qui permet au populations de localiser les pharmacies selon leur besoin. La recherche est principalement axée sur le Burkina Faso. Profiter !
+  </p>
 
-  <div class="row">
-    <div class="col-4" *ngFor="let personnel of personnels">
-      <app-personnal-card [personnel]="personnel"></app-personnal-card>
+  <div class="mt-4">
+    <h3 class="font-semibold text-base text-center">Contributeurs au projet</h3>
+    <div class="flex gap-3 mt-5 justify-start flex-wrap">
+      <div *ngFor="let personnel of personnels">
+        <app-personnal-card [personnel]="personnel"></app-personnal-card>
+      </div>
     </div>
   </div>
 </div>

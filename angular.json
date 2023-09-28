@@ -34,12 +34,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/leaflet/dist/leaflet.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -75,10 +72,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "locapharma:build:production",
+              "browserTarget": "locapharma:build:production"
             },
             "development": {
-              "browserTarget": "locapharma:build:development",
+              "browserTarget": "locapharma:build:development"
             }
           },
           "defaultConfiguration": "development"

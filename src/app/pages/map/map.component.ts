@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MapsAPILoader, NgMapsViewComponent} from "@ng-maps/core";
-import {PharmacyService} from "../services/pharmacy.service";
+import {PharmacyService} from "../../services/pharmacy.service";
 
 @Component({
     selector: 'app-map',
