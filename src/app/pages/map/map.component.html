@@ -1,7 +1,9 @@
 <div >
-  <map-view style="height: 100vh;" [latitude]="12.3714" [longitude]="-1.5197" [zoom]="8">
-    <map-marker [latitude]="12.3262494" title="ok" label="Test de dnife" [longitude]="-1.5165817">
-    </map-marker>
+  <map-view style="height: 100vh;" [latitude]="12.3714" [longitude]="-1.5197" [zoom]="13">
+    <div *ngFor="let pharmacy of pharmacies">
+      <map-marker [markerClickable]="true" [openInfoWindow]="true"  [latitude]="pharmacy.geometry.location.lat" [label]="pharmacy?.name" [longitude]="pharmacy.geometry.location.lng">
+      </map-marker>
+    </div>
   </map-view>
 </div>
 

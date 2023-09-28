@@ -2,30 +2,23 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {environment} from "../environments/environment";
+import { environment } from '../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PharmacyService {
   private apiKey: string = environment.apiKey;
+  apiUrl = 'http://localhost:3000/api/google-maps';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getPharmacies(location: string, pageToken?: string) {
-
-    let params = {
-      query: `pharmacy in ${location}`,
-      key: this.apiKey
-    };
-
+  getPharmacies(pageToken?: string) {
     if (pageToken) {
-      // @ts-ignore
-      params['pagetoken'] = pageToken;
+      this.apiUrl += `?pagetoken=${pageToken}`;
+      console.log(this.apiUrl);
     }
 
-    return this.http.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {
-      params: params
-    });
+    return this.http.get(this.apiUrl);
   }
 }

@@ -9,7 +9,7 @@ module.exports = {
     },
     colors:{
       base:'#244065',
-      green:'#99CC33',
+      success:'#99CC33',
       back:'#FAFAFA'
     }
   },

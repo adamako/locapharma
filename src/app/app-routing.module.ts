@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PharmaciesComponent} from "./pages/pharmacies/pharmacies.component";
-import {CardComponent} from "./pages/card/card.component";
 import {AproposComponent} from "./pages/apropos/apropos.component";
 import {MapComponent} from "./pages/map/map.component";
 
