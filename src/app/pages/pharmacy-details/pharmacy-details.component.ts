@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Pharmacy } from '../../models/Pharmacy';
 import { GooglePlaceDetails } from '../../models/GooglePlaceDetail';
 import { PharmacyService } from '../../services/pharmacy.service';
+import { LoadingService } from '../../services/loading.service';
 
 @Component({
   selector: 'app-pharmacy-details',
@@ -12,10 +13,12 @@ import { PharmacyService } from '../../services/pharmacy.service';
 export class PharmacyDetailsComponent implements OnInit {
   pharmacy: Pharmacy | undefined;
   pharmacyDetails: GooglePlaceDetails | undefined;
+  loading$ = this.loadingService.loading;
 
   constructor(
     private router: Router,
     private pharmacyService: PharmacyService,
+    private loadingService: LoadingService,
   ) {
     const navigation = this.router.getCurrentNavigation();
     // @ts-ignore

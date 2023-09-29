@@ -1,7 +1,12 @@
 <div >
   <map-view style="height: 100vh;" [latitude]="12.3714" [longitude]="-1.5197" [zoom]="13">
-    <div *ngFor="let pharmacy of pharmacies">
-      <map-marker  [textContent]="'DEmsi'"  [markerClickable]="true" [openInfoWindow]="true"  [latitude]="pharmacy.geometry.location.lat" [label]="pharmacy?.name" [longitude]="pharmacy.geometry.location.lng">
+<!--    <div *ngFor="let pharmacy of pharmacies">-->
+<!--      <map-marker [markerClickable]="true" [openInfoWindow]="true"  [latitude]="pharmacy.geometry.location.lat" [label]="pharmacy?.name" [longitude]="pharmacy.geometry.location.lng">-->
+<!--      </map-marker>-->
+<!--    </div>-->
+
+    <div *ngFor="let pharma of localPharmacies">
+      <map-marker [markerClickable]="true" [openInfoWindow]="true"  [latitude]="pharma.latitude" [label]="pharma?.name" [longitude]="pharma.longitude">
       </map-marker>
     </div>
   </map-view>

@@ -15,6 +15,8 @@ import { environment } from './environments/environment';
 import { PharmacyCardComponent } from './components/pharmacy-card/pharmacy-card.component';
 import { PharmacyDetailsComponent } from './pages/pharmacy-details/pharmacy-details.component';
 import { RatingItemComponent } from './components/rating-item/rating-item.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { RatingItemComponent } from './components/rating-item/rating-item.compon
     PharmacyCardComponent,
     PharmacyDetailsComponent,
     RatingItemComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { RatingItemComponent } from './components/rating-item/rating-item.compon
       apiKey: environment.apiKey,
       libraries: ['places'],
     }),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

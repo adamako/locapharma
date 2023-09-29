@@ -1,14 +1,32 @@
 <div class="p-4 max-w-full ga">
+  <app-loading *ngIf="isPageLoading$ | async"></app-loading>
+
+  <div class="mb-5 mt-5">
+    <label for="underline_select" class="sr-only">Underline select</label>
+    <select id="underline_select" (change)="onSelectedCity($event)" [ngModel]="selectedCity" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+      <option>Sélectionner la ville</option>
+      <option *ngFor="let city of cities" [value]="city">
+        {{city}}
+      </option>
+    </select>
+    <div class="mt-5">
+      <span class="text-lg font-bold">Ville actuelle: </span>
+      <span>{{selectedCity}}</span>
+    </div>
+  </div>
+
   <h3 class="text-center text-xl font-bold text-base">
     Pharmacies disponibles
   </h3>
 
- <div class="flex flex-col w-full mt-3 gap-3" *ngFor="let pharmacy of pharmacies">
-   <app-pharmacy-card [pharmacy]="pharmacy"></app-pharmacy-card>
- </div>
-  <div *ngIf="pharmacies.length && nextPageToken" class="flex items-center justify-center mt-5">
-    <a  (click)="handleNextPage()" class="hover:cursor-pointer hover:bg-base hover:text-white flex items-center justify-center px-4 h-10 ml-3 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg">
-      Charger plus
-    </a>
+  <div>
+    <div class="flex flex-col w-full mt-3 gap-3" *ngFor="let pharmacy of pharmacies">
+      <app-pharmacy-card [pharmacy]="pharmacy"></app-pharmacy-card>
+    </div>
+    <div *ngIf="pharmacies.length && nextPageToken" class="flex items-center justify-center mt-5">
+      <a  (click)="handleNextPage()" class="hover:cursor-pointer hover:bg-base hover:text-white flex items-center justify-center px-4 h-10 ml-3 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg">
+        Charger plus
+      </a>
+    </div>
   </div>
 </div>
