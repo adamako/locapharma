@@ -9,7 +9,7 @@ import { Pharmacy } from '../../models/Pharmacy';
 })
 export class PharmaciesComponent implements OnInit {
   pharmacies: Pharmacy[] = [];
-  nextPageToken: string = '';
+  nextPageToken: string | undefined = '';
 
   constructor(private pharmacyService: PharmacyService) {}
 
@@ -18,23 +18,27 @@ export class PharmaciesComponent implements OnInit {
   }
 
   fetchData(nextPageToken?: string) {
-    this.pharmacyService.getPharmacies(nextPageToken).subscribe((data) => {
-      // @ts-ignore
-      this.pharmacies = Array.from(
+    try {
+      this.pharmacyService.getPharmacies(nextPageToken).subscribe((data) => {
         // @ts-ignore
-        new Set([...this.pharmacies, ...data['results']]),
-      );
+        this.pharmacies = [...this.pharmacies, ...data['results']];
 
-      // @ts-ignore
-      if (data['next_page_token']) {
         // @ts-ignore
-        this.nextPageToken = data['next_page_token'];
-      }
-      console.log(data);
-    });
+        if (data['next_page_token'] !== undefined) {
+          // @ts-ignore
+          this.nextPageToken = data['next_page_token'];
+        } else {
+          this.nextPageToken = undefined;
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   handleNextPage() {
-    this.fetchData(this.nextPageToken);
+    if (this.nextPageToken) {
+      this.fetchData(this.nextPageToken);
+    }
   }
 }

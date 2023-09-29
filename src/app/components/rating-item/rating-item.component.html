@@ -1,0 +1,13 @@
+<div class="flex mt-4 items-start">
+  <div class="hover:cursor-pointer" (click)="viewAuthorProfile()">
+    <img class="w-10 h-10 rounded-full" [src]="review?.profile_photo_url" alt="Rounded avatar">
+  </div>
+  <div class="ml-2">
+        <span class="font-bold">
+          {{review?.author_name}}
+        </span>
+    <p>
+      {{review?.text}}
+    </p>
+  </div>
+</div>

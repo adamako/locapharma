@@ -9,16 +9,30 @@ import { environment } from '../environments/environment';
 })
 export class PharmacyService {
   private apiKey: string = environment.apiKey;
-  apiUrl = 'http://localhost:3000/api/google-maps';
+  apiUrl = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) {}
 
   getPharmacies(pageToken?: string) {
-    if (pageToken) {
-      this.apiUrl += `?pagetoken=${pageToken}`;
-      console.log(this.apiUrl);
+    let params = {
+      search: 'pharmacies in Ouagadougou , burkina faso',
+    };
+
+    if (pageToken && pageToken.length > 0) {
+      // @ts-ignore
+      params['pagetoken'] = pageToken;
     }
 
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/google-maps`, { params: params });
+  }
+
+  getPharmacyDetails(placeId: string) {
+    let params = {
+      place_id: placeId,
+    };
+
+    return this.http.get(this.apiUrl + '/google-maps-details', {
+      params: params,
+    });
   }
 }
