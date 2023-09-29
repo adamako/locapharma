@@ -1,5 +1,3 @@
-// pharmacy.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
@@ -10,8 +8,6 @@ import { finalize } from 'rxjs';
   providedIn: 'root',
 })
 export class PharmacyService {
-  apiUrl = 'http://localhost:3000/api';
-
   constructor(
     private http: HttpClient,
     private loadingSvc: LoadingService,
@@ -29,7 +25,7 @@ export class PharmacyService {
     }
 
     return this.http
-      .get(`${this.apiUrl}/google-maps`, { params: params })
+      .get(`${environment.apiUrl}/google-maps`, { params: params })
       .pipe(finalize(() => this.loadingSvc.hide()));
   }
 
@@ -41,7 +37,7 @@ export class PharmacyService {
     };
 
     return this.http
-      .get(this.apiUrl + '/google-maps-details', {
+      .get(environment.apiUrl + '/google-maps-details', {
         params: params,
       })
       .pipe(finalize(() => this.loadingSvc.hide()));

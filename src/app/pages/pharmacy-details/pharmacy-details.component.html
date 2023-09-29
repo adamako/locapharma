@@ -10,7 +10,7 @@
         Retour
      </span>
     </button>
-    <span [class.bg-red-600]="!pharmacy?.opening_hours?.open_now" class="text-white bg-success uppercase font-bold rounded text-sm px-5 py-2.5 mr-2 mb-2">
+    <span [class.bg-red-600]="!pharmacy?.opening_hours?.open_now" [class.bg-success]="pharmacy?.opening_hours?.open_now" class=" text-white uppercase font-bold rounded text-sm px-5 py-2.5 mr-2 mb-2">
         {{pharmacy?.opening_hours?.open_now ? 'Ouvert' : 'Fermé'}}
     </span>
   </div>
