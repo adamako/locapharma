@@ -54,5 +54,5 @@ To install and run this application, follow these steps:
 
 ## Screenshots
 
-![](/Users/adamako/master/web/locapharma/src/assets/screenshots/pharamacies.png)
-![](/Users/adamako/master/web/locapharma/src/assets/screenshots/map.png)
+![pharmacies](src/assets/screenshots/pharamacies.png)
+![map](src/assets/screenshots/map.png)
