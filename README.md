@@ -1,27 +1,55 @@
-# Locapharma
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
-## Development server
+# Locapharma
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Locapharma** is an application that allows users to find pharmacies in Burkina Faso.
 
-## Code scaffolding
+**View the live demo:** [https://locapharma.vercel.app/map](https://locapharma.vercel.app/map/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- View available pharmacies in Burkina Faso
+- Filter pharmacies by city
+- View detailed information about a specific pharmacy
+- View the location of a pharmacy on a map
+- Get directions to a pharmacy from your current location
+- View pharmacies on a map
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prerequisites
 
-## Running unit tests
+Before you begin, ensure you have met the following requirements:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js
+- Angular CLI
+- Google Maps API key
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To install and run this application, follow these steps:
 
-## Further help
+1. **Clone** this repository to your local machine:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/adamako/locapharma.git
+   ```
+
+2. **Navigate** to the project directory:
+
+   ```bash
+   cd localpharma
+   ```
+
+3. **Install** the required dependencies:
+
+   ```bash
+   npm install
+   ```
+4. Set up your **Google Maps API key** in src/environment.ts: 
+   ```typescript 
+   export const environment = {
+       production: false,
+       apiUrl: 'https://locapharma-api.onrender.com/api', // you can use your own service
+       apiKey: '<your-api-key>',
+   };
+
+## Screenshots
