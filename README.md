@@ -47,8 +47,7 @@ To install and run this application, follow these steps:
 4. Set up your **Google Maps API key** in src/environment.ts: 
    ```typescript 
    export const environment = {
-       production: false,
-       apiUrl: 'https://locapharma-api.onrender.com/api', // you can use your own service
+       ...
        apiKey: '<your-api-key>',
    };
 
